@@ -21,7 +21,7 @@ galleryEl.insertAdjacentHTML('beforeend', items);
 
 // ---------------------2-----------------
 
-let gallery = new SimpleLightbox('ul.gallery a', {
+let gallery = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: '250ms',
 });
