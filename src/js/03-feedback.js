@@ -19,9 +19,9 @@ function onFormInput(e) {
 const saveData = localStorage.getItem('STORAGE_DATA');
 const parseData = JSON.parse(saveData);
 if (saveData) {
-  formData = parseData;
-  emailEl.value = parseData.email;
-  textareaEl.value = parseData.message;
+  // formData = parseData;
+  emailEl.value = parseData.email || '';
+  textareaEl.value = parseData.message || '';
 }
 
 function onFormSubmit(e) {
