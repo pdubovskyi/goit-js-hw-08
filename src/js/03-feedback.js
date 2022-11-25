@@ -13,13 +13,13 @@ formEl.addEventListener('submit', onFormSubmit);
 
 function onFormInput(e) {
   formData[e.target.name] = e.target.value;
-  localStorage.setItem('STORAGE_DATA', JSON.stringify(formData));
+  localStorage.setItem(STORAGE_DATA, JSON.stringify(formData));
 }
 
-const saveData = localStorage.getItem('STORAGE_DATA');
+const saveData = localStorage.getItem(STORAGE_DATA);
 const parseData = JSON.parse(saveData);
 if (saveData) {
-  // formData = parseData;
+  formData = parseData;
   emailEl.value = parseData.email || '';
   textareaEl.value = parseData.message || '';
 }
@@ -27,6 +27,6 @@ if (saveData) {
 function onFormSubmit(e) {
   e.preventDefault();
   e.currentTarget.reset();
-  localStorage.removeItem('STORAGE_DATA');
+  localStorage.removeItem(STORAGE_DATA);
   console.log(formData);
 }
